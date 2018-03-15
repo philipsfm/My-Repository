@@ -1,0 +1,31 @@
+﻿@model IEnumerable<Projekat.Models.Preduzece>
+
+@{
+    ViewBag.Title = "Preduzece";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Preduzece</h2>
+<p>
+    @Html.ActionLink("Novo Preduzece", "New", "Preduzece", null, new { @class = "btn btn-primary" })
+</p>
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Preduzece</th>
+            <th>Adresa Preduzeca</th>
+            <th>Web Stranica</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var Preduzece in Model)
+        {
+            <tr>
+                <td>@Html.ActionLink(Preduzece.ImePreduzeca, "Edit", "Preduzece", new { id = Preduzece.ID }, null)</td>
+                <td>@Preduzece.AdresaPreduzeca</td>
+                <td>@Preduzece.WebStranicaPreduzeca</td>
+                
+            </tr>
+        }
+    </tbody>
+</table>

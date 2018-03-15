@@ -1,0 +1,45 @@
+﻿@model Projekat.ViewModels.PreduzeceFormViewModel
+
+@{
+    ViewBag.Title = "New";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Novo Preduzece</h2>
+
+@using (Html.BeginForm("Save", "Preduzece"))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.Preduzece.ImePreduzeca)
+        @Html.TextBoxFor(m => m.Preduzece.ImePreduzeca, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Preduzece.AdresaPreduzeca)
+        @Html.TextBoxFor(m => m.Preduzece.AdresaPreduzeca, new { @class = "form-control" })
+    </div><div class="form-group">
+         @Html.LabelFor(m => m.Preduzece.OpstinaPreduzeca)
+        @Html.TextBoxFor(m => m.Preduzece.OpstinaPreduzeca, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Preduzece.PostanskiBrPreduzeca)
+        @Html.TextBoxFor(m => m.Preduzece.PostanskiBrPreduzeca, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Preduzece.MaticniBrPreduzeca)
+        @Html.TextBoxFor(m => m.Preduzece.MaticniBrPreduzeca, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Preduzece.PIB)
+        @Html.TextBoxFor(m => m.Preduzece.PIB, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Preduzece.BrRacunaPreduzeca)
+        @Html.TextBoxFor(m => m.Preduzece.BrRacunaPreduzeca, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Preduzece.WebStranicaPreduzeca)
+        @Html.TextBoxFor(m => m.Preduzece.WebStranicaPreduzeca, new { @class = "form-control" })
+    </div>
+    @Html.HiddenFor(m => m.Preduzece.ID)
+    <button type="submit" class="btn btn-primary">Save</button>
+}

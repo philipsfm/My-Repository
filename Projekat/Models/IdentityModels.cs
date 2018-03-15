@@ -20,6 +20,9 @@ namespace Projekat.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+        public DbSet<Osoba> Osobe { get; set; }
+        public DbSet<Preduzece> Preduzece { get; set; }
+        public DbSet <KontaktTelefon> TipKontaktTelefona { get; set; }
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
