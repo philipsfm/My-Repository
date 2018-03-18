@@ -1,0 +1,47 @@
+﻿@model Vol3.ViewModels.PreduzeceViewModel
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Novo Preduzece</h2>
+
+@using (Html.BeginForm("Create", "Preduzece"))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.Preduzece.Naziv)
+        @Html.TextBoxFor(m => m.Preduzece.Naziv, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Preduzece.MaticniBroj)
+        @Html.TextBoxFor(m => m.Preduzece.MaticniBroj, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Preduzece.PIB)
+        @Html.TextBoxFor(m => m.Preduzece.PIB, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Preduzece.BrojRacuna)
+        @Html.TextBoxFor(m => m.Preduzece.BrojRacuna, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Preduzece.WebStranica)
+        @Html.TextBoxFor(m => m.Preduzece.WebStranica, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Preduzece.Beleska)
+        @Html.TextAreaFor(m => m.Preduzece.Beleska, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Preduzece.AdresaID)
+        @Html.TextAreaFor(m => m.Preduzece.AdresaID, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Preduzece.OpstinaID)
+        @Html.TextAreaFor(m => m.Preduzece.OpstinaID, new { @class = "form-control" })
+    </div>
+
+
+    <button type="submit" class="btn btn-primary">Sacuvaj</button>
+}

@@ -1,0 +1,21 @@
+﻿@model Vol3.ViewModels.MejlViewModel
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Novi Mejl</h2>
+
+@using (Html.BeginForm("Create", "Mejl"))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.Mejl.MejlAdresa)
+        @Html.TextBoxFor(m => m.Mejl.MejlAdresa, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Mejl.TipMejlaID)
+        @Html.TextBoxFor(m => m.Mejl.TipMejlaID, new { @class = "form-control" })
+    </div>
+    <button type="submit" class="btn btn-primary">Sacuvaj</button>
+}

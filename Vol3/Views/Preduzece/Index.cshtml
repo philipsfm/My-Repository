@@ -1,0 +1,48 @@
+﻿@model IEnumerable<Vol3.Models.Preduzece>
+
+@{
+    ViewBag.Title = "Preduzece";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Preduzece</h2>
+<p>
+    @Html.ActionLink("Novo Preduzece", "Create", null, new { @class = "btn btn-primary" })
+</p>
+@if (!Model.Any())
+{
+    <p>Nemate Preduzeca</p>
+}
+<table class="table table-bordered table-hover">
+
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Naziv</th>
+            <th>Maticni Broj</th>
+            <th>PIB</th>
+            <th>Broj Racuna</th>
+            <th>Web Stranica</th>
+            <th>Beleska</th>
+            <th>Adresa</th>
+            <th>Opstina</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var preduzece in Model)
+        {
+            <tr>
+                <td>@preduzece.PreduzeceID</td>
+                <td>@preduzece.Naziv</td>
+                <td>@preduzece.MaticniBroj</td>
+                <td>@preduzece.PIB</td>
+                <td>@preduzece.BrojRacuna</td>
+                <td>@preduzece.WebStranica</td>
+                <td>@preduzece.Beleska</td>
+                <td>@Html.ActionLink(preduzece.Adresa.Naziv,"Index","Adresa", new {preduzece.Adresa.AdresaID},null)</td>
+                <td>@Html.ActionLink(preduzece.Opstina.Naziv, "Index", "Opstina", new { preduzece.Opstina.OpstinaID }, null)</td>
+            </tr>
+        }
+    </tbody>
+</table>
+

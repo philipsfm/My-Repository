@@ -1,0 +1,32 @@
+﻿@model IEnumerable<Vol3.Models.Adresa>
+@{
+    ViewBag.Title = "Adresa";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Adresa</h2>
+<p>
+    @Html.ActionLink("Nova Adresa", "Create", null, new { @class = "btn btn-primary" })
+</p>
+@if (!Model.Any())
+{
+    <p>Nemate Tip Kontakta</p>
+}
+<table class="table table-bordered table-hover">
+
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Opis</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var adresa in Model)
+        {
+            <tr>
+                <td>@Html.ActionLink(adresa.Naziv, "Details", "TipKontakta", new { id = adresa.AdresaID}, null)</td>
+                <td>@adresa.Naziv</td>
+            </tr>
+        }
+    </tbody>
+</table>

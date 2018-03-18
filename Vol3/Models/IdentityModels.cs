@@ -20,6 +20,15 @@ namespace Vol3.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+        public DbSet<Adresa> Adresa { get; set; }
+        public DbSet<KontaktTelefon> KontaktTelefon { get; set; }
+        public DbSet<Mejl> Mejl { get; set; }
+        public DbSet<Opstina> Opstina { get; set; }
+        public DbSet<Osoba> Osoba { get; set; }
+        public DbSet<Preduzece> Preduzece { get; set; }
+        public DbSet<RadnoMesto> RadnoMesto { get; set; }
+        public DbSet<TipKontakta> TipKontakta { get; set; }
+        public DbSet<TipMejla> TipMejla { get; set; }
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {

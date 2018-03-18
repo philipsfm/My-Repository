@@ -1,0 +1,25 @@
+﻿@model Vol3.ViewModels.KontaktTelefonViewModel
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Novi Kontakt Telefon</h2>
+
+@using (Html.BeginForm("Create", "KontaktTelefon"))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.KontaktTelefon.Broj)
+        @Html.TextBoxFor(m => m.KontaktTelefon.Broj, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.KontaktTelefon.Lokal)
+        @Html.TextBoxFor(m => m.KontaktTelefon.Lokal, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.KontaktTelefon.TipKontaktaID)
+        @Html.TextBoxFor(m => m.KontaktTelefon.TipKontaktaID, new { @class = "form-control" })
+    </div>
+    <button type="submit" class="btn btn-primary">Sacuvaj</button>
+}

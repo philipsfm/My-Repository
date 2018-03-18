@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Vol3.Models.Osoba>
+
+@{
+    ViewBag.Title = "Osoba";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Osobe</h2>
+<p>
+    @Html.ActionLink("Nova Osoba", "Create", null, new { @class = "btn btn-primary" })
+</p>
+@if (!Model.Any())
+{
+    <p>Nemate Osoba</p>
+}
+<table class="table table-bordered table-hover">
+
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Ime</th>
+            <th>Prezime</th>
+            <th>Preduzece</th>
+            <th>Radno Mesto</th>
+            <th>Kontakt Telefon</th>
+            <th>Mejl</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var osoba in Model)
+        {
+            <tr>
+                <td>@osoba.OsobaID</td>
+                <td>@osoba.Ime</td>
+                <td>@osoba.Prezime</td>
+                <td>@Html.ActionLink(osoba.Preduzece.Naziv, "Index", "Preduzece", new { osoba.Preduzece.PreduzeceID}, null)</td>
+                <td>@Html.ActionLink(osoba.RadnoMesto.Naziv, "Index", "RadnoMesto", new { osoba.RadnoMesto.RadnoMestoID }, null)</td>
+                <td>@Html.ActionLink(osoba.KontaktTelefon.Broj.ToString(), "Index", "KontaktTelefon", new { osoba.KontaktTelefon.KontaktTelefonID}, null)</td>
+                <td>@Html.ActionLink(osoba.Mejl.MejlAdresa, "Index", "Mejl", new { osoba.Mejl.MejlID}, null)</td>
+            </tr>
+        }
+    </tbody>
+</table>
+

@@ -1,0 +1,32 @@
+﻿@model IEnumerable<Vol3.Models.TipKontakta>
+@{
+    ViewBag.Title = "TipKontakta";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Tip Kontakta</h2>
+<p>
+    @Html.ActionLink("Novi Tip kontakta", "Create", null, new { @class = "btn btn-primary" })
+</p>
+@if (!Model.Any())
+{
+    <p>Nemate Tip Kontakta</p>
+}
+<table class="table table-bordered table-hover">
+    
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Opis</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var tipKontakta in Model)
+        {
+            <tr>
+                <td>@Html.ActionLink(tipKontakta.Opis, "Details", "TipKontakta", new { id = tipKontakta.TipKontaktaID }, null)</td>
+                <td>@tipKontakta.Opis</td>
+            </tr>
+        }
+    </tbody>
+</table>

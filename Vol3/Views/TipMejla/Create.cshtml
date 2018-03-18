@@ -1,0 +1,18 @@
+﻿@model Vol3.ViewModels.TipMejlovaViewModels
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Novi Tip Mejla</h2>
+
+@using (Html.BeginForm("Create", "TipMejla"))
+{
+    <div class="form-group">
+        @Html.LabelFor(m=>m.TipMejla.Opis)
+        @Html.TextBoxFor(m => m.TipMejla.Opis, new { @class = "form-control"})
+    </div>
+    <button type="submit" class="btn btn-primary">Sacuvaj</button>
+}
+
+

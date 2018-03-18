@@ -1,0 +1,36 @@
+﻿@model IEnumerable<Vol3.Models.Mejl>
+
+@{
+    ViewBag.Title = "Mejl";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Mejl</h2>
+<p>
+    @Html.ActionLink("Novi Mejl", "Create", null, new { @class = "btn btn-primary" })
+</p>
+@if (!Model.Any())
+{
+    <p>Nemate Mejlova</p>
+}
+<table class="table table-bordered table-hover">
+
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Adresa</th>
+            <th>Tip</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var mejl in Model)
+        {
+            <tr>
+                <td>@mejl.MejlID</td>
+                <td>@mejl.MejlAdresa</td>
+                <td>@Html.ActionLink(mejl.TipMejla.Opis,"Index","TipMejla", new { id = mejl.TipMejla.TipMejlaID },null)</td>
+                @*@Html.ActionLink(opsina.Naziv, "Details", "Opstina", new { id = opstina.OpstinaID }, null)</td>*@
+            </tr>
+        }
+    </tbody>
+</table>

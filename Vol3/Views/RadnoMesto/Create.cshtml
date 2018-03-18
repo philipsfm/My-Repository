@@ -1,0 +1,18 @@
+﻿@model Vol3.ViewModels.RadnoMestoViewModel
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Novo Radno Mesto</h2>
+
+@using (Html.BeginForm("Create", "RadnoMesto"))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.RadnoMesto.Naziv)
+        @Html.TextBoxFor(m => m.RadnoMesto.Naziv, new { @class = "form-control" })
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Sacuvaj</button>
+}

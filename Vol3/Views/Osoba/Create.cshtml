@@ -1,0 +1,39 @@
+﻿@model Vol3.ViewModels.OsobaViewModel
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Nova Osoba</h2>
+
+@using (Html.BeginForm("Create", "Osoba"))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.Osoba.Ime)
+        @Html.TextBoxFor(m => m.Osoba.Ime, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Osoba.Prezime)
+        @Html.TextBoxFor(m => m.Osoba.Prezime, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Osoba.PreduzeceID)
+        @Html.TextBoxFor(m => m.Osoba.PreduzeceID, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Osoba.RadnoMestoID)
+        @Html.TextBoxFor(m => m.Osoba.RadnoMestoID, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Osoba.KontaktTelefonID)
+        @Html.TextBoxFor(m => m.Osoba.KontaktTelefonID, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Osoba.MejlID)
+        @Html.TextAreaFor(m => m.Osoba.MejlID, new { @class = "form-control" })
+    </div>
+    
+
+    <button type="submit" class="btn btn-primary">Sacuvaj</button>
+}

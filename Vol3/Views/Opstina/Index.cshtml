@@ -1,0 +1,34 @@
+﻿@model IEnumerable<Vol3.Models.Opstina>
+@{
+    ViewBag.Title = "Opstina";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Opstina</h2>
+<p>
+    @Html.ActionLink("Nova Opstina", "Create", null, new { @class = "btn btn-primary" })
+</p>
+@if (!Model.Any())
+{
+    <p>Nemate Opstina</p>
+}
+<table class="table table-bordered table-hover">
+
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Naziv</th>
+            <th>Postanski Broj</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var opstina in Model)
+        {
+            <tr>
+                <td>@Html.ActionLink(opstina.Naziv, "Details", "Opstina", new { id = opstina.OpstinaID }, null)</td>
+                <td>@opstina.Naziv</td>
+                <td>@opstina.PostanskiBr</td>
+            </tr>
+        }
+    </tbody>
+</table>

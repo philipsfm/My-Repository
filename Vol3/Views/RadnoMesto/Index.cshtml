@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Vol3.Models.RadnoMesto>
+
+@{
+    ViewBag.Title = "RadnoMesto";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Radno Mesto</h2>
+<p>
+    @Html.ActionLink("Novo Radno Mesto", "Create", null, new { @class = "btn btn-primary" })
+</p>
+@if (!Model.Any())
+{
+    <p>Nemate Radnih Mesta</p>
+}
+<table class="table table-bordered table-hover">
+
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Naziv</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var radnoMesto in Model)
+        {
+            <tr>
+                <td>@Html.ActionLink(radnoMesto.Naziv, "Details", "RadnoMesto", new { id = radnoMesto.RadnoMestoID }, null)</td>
+                <td>@radnoMesto.Naziv</td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,17 @@
+﻿@model Vol3.ViewModels.AdresaViewModel
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Nova Adresa</h2>
+
+@using (Html.BeginForm("Create", "Adresa"))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.Adresa.Naziv)
+        @Html.TextBoxFor(m => m.Adresa.Naziv, new { @class = "form-control" })
+    </div>
+    <button type="submit" class="btn btn-primary">Sacuvaj</button>
+}
+

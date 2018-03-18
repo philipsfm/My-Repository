@@ -1,0 +1,22 @@
+﻿@model Vol3.ViewModels.OpstinaViewModel
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Nova Adresa</h2>
+
+@using (Html.BeginForm("Create", "Opstina"))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.Opstina.Naziv)
+        @Html.TextBoxFor(m => m.Opstina.Naziv, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Opstina.PostanskiBr)
+        @Html.TextBoxFor(m => m.Opstina.PostanskiBr, new { @class = "form-control" })
+    </div>
+    <button type="submit" class="btn btn-primary">Sacuvaj</button>
+}
+
