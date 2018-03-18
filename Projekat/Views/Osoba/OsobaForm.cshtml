@@ -1,0 +1,43 @@
+﻿@model Projekat.ViewModels.OsobaFormViewModel
+@{
+    ViewBag.Title = "New";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Nova Osoba</h2>
+
+@using (Html.BeginForm("Save", "Osoba"))
+{
+    <div class="form-group">
+        @Html.LabelFor(m=>m.Osoba.Ime)
+        @Html.TextBoxFor(m=> m.Osoba.Ime, new { @class="form-control"})
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Osoba.Prezime)
+        @Html.TextBoxFor(m => m.Osoba.Prezime, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Osoba.RadnoMesto)
+        @Html.TextBoxFor(m => m.Osoba.RadnoMesto, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Osoba.KontaktTelefon.Id)
+        @Html.TextBoxFor(m => m.Osoba.KontaktTelefon.Id, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Osoba.KontaktTelefonID)
+        @Html.TextBoxFor(m => m.Osoba.KontaktTelefonID, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Osoba.TipMejlAdrese)
+        @Html.TextBoxFor(m => m.Osoba.TipMejlAdrese, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Osoba.MejlAdresa)
+        @Html.TextBoxFor(m => m.Osoba.MejlAdresa, new { @class = "form-control" })
+    </div>
+
+
+    @Html.HiddenFor(m=>m.Osoba.ID)
+    <button type="submit" class="btn btn-primary">Sacuvaj</button>
+}
